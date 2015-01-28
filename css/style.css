@@ -1,0 +1,70 @@
+.container {
+}
+
+.ballEnlarge {
+  -webkit-animation: enlargeBall 2s;
+    /*-webkit-animation-timing-function: linear;*/
+}
+
+@-webkit-keyframes enlargeBall {
+    0%  { background-color: white;  }
+    50% { background-color: orange; }
+    100% {
+      left: -500px;
+      top: -500px;
+      width: 2000px;
+      height: 2000px;
+      background-color: blue;
+    }
+  }
+
+.backgroundImage {
+  background-image: url("../images/Sun-outer-space-l.jpg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  -webkit-background-size: 110%;
+  -moz-background-size: 110%;
+  -o-background-size: 110%;
+  background-size: 110%;
+}
+
+.playerShip {
+  position: absolute;
+  top: 90%;  /*500px;*/
+  left: 50%;
+  width: 150px;
+  height: 20px;
+  margin: 0;
+  /*background-image: url("images/10-shiny-tinsel-gold-christmas-textures.jpg");*/
+  border-style: solid;
+  border-color: #C00000;
+  background-color: yellow;
+
+}
+
+.ball {
+  background-color: white;
+  border-style: solid;
+  border-color: #C00000;
+  position: absolute;
+  border-radius: 100%;
+}
+
+.collidableObject {
+
+}
+
+.block {
+  display:block;
+  /*height:4%;
+  width:8%;*/
+  background-color: red;
+  position: absolute;
+  border-style: solid;
+  border-color: gray;
+}
+
+.congratulations {
+  font-size: 55px;
+  color: white;
+}
