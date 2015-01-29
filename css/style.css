@@ -1,3 +1,18 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, h1, p, a, em, img, strong, sub, center, sup, label, article, aside, canvas, footer, header, menu, nav, section, summary, audio {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/*-----------------------------*/
+
 .container {
 }
 
@@ -7,25 +22,26 @@
 }
 
 @-webkit-keyframes enlargeBall {
-    0%  { background-color: white;  }
-    50% { background-color: orange; }
+    0%  { background-color: blue;}
+    25% { background-color: red;}
+    50% { background-color: orange;}
+    75% { background-color: yellow;}
     100% {
-      left: -500px;
-      top: -500px;
-      width: 2000px;
-      height: 2000px;
-      background-color: blue;
+      left: 0;
+      top: -300px;
+      width: 1200px;
+      height: 1200px;
+      background-color: white;
     }
   }
 
 .backgroundImage {
   background-image: url("../images/Sun-outer-space-l.jpg");
   background-repeat: no-repeat;
-  background-size: 110%;
-  -webkit-background-size: 110%;
+  -webkit-background-size: 120%;
   -moz-background-size: 110%;
   -o-background-size: 110%;
-  background-size: 110%;
+  background-size: 120%;
 }
 
 .playerShip {
@@ -35,20 +51,28 @@
   width: 150px;
   height: 20px;
   margin: 0;
-  /*background-image: url("images/10-shiny-tinsel-gold-christmas-textures.jpg");*/
+  background-image: url("../images/shinyMetal.jpg");
   border-style: solid;
-  border-color: #C00000;
-  background-color: yellow;
+  border-color: white;
+  box-shadow:0 0 20px #fefcc9,
+    0 10px 30px #33ffff,
+    20px 60px 50px #3366ff,
+    -20px 60px 60px #3333ff,
+    0 80px 70px #ff3333;
 
 }
 
 .ball {
-  background-color: white;
+  background-color: black;
   border-style: solid;
-  border-color: #C00000;
+  border-color: white;
   position: absolute;
   border-radius: 100%;
-}
+/*  box-shadow:30px 0 30px #feec85,
+    10px 30px 30px #ec760c,
+    10px -40px 50px #cd4606,
+    -30px 10px 60px #973716;
+*/}
 
 .collidableObject {
 
@@ -56,15 +80,41 @@
 
 .block {
   display:block;
-  /*height:4%;
-  width:8%;*/
-  background-color: red;
   position: absolute;
   border-style: solid;
   border-color: gray;
+  box-shadow:10px 0 20px #202020,
+    0 10px 20px #202020;
 }
 
 .congratulations {
-  font-size: 55px;
+  position:absolute;
+  font-size: 75px;
   color: white;
+  top: 35%;
+  left: 30%;
+  /*text shadow below taken from http://line25.com/articles/using-css-text-shadow-to-create-cool-text-effects*/
+  text-shadow: 0 0 20px #fefcc9,
+    10px -10px 30px #feec85,
+    -20px -20px 40px #ffae34,
+    20px -40px 50px #ec760c,
+    -20px -60px 60px #cd4606,
+    0 -80px 70px #973716,
+    10px -90px 80px #451b0e,
+    -10px 10px 30px #feec85,
+    20px 20px 40px #ffae34,
+    -20px 40px 50px #ec760c,
+    20px 60px 60px #cd4606,
+    0 80px 70px #973716,
+    -10px 90px 80px #451b0e
+    ;
+}
+
+.pauseMessage {
+  position:absolute;
+  top: 45%;
+  left: 30%;
+  font-size: 40px;
+  text-align: center;
+  color: brown;
 }
