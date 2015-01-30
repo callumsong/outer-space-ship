@@ -399,7 +399,7 @@ function levelLayout(level) {
     rows.push([0,0,0,0,'gold','purple','purple','purple','purple','purple','purple','gold',0,0,0,0,]);
     rows.push([0,0,0,0,0,'black','black','black','black','black','black',0,0,0,0,0,]);
     return rows;
-    break;
+    break; //
   }
 }
 
