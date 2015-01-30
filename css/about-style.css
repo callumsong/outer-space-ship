@@ -73,11 +73,12 @@ li {
 
 button {
   font-family: 'eight-bit';
+  font-size: 20px;
   display: block;
   clear: both;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 190px;
   border-radius:100%;
   background-image: url("../images/shinyMetal.jpg");
   width: 20%;

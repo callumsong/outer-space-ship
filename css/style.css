@@ -35,8 +35,8 @@ html, body, div, span, h1, p, a, em, img, strong, sub, center, sup, label, artic
     }
   }
 
-.backgroundImage {
-  background-image: url("../images/Sun-outer-space-l.jpg");
+body {
+  /*background-image: url("../images/Sun-outer-space-l.jpg");*/
   background-repeat: no-repeat;
   -webkit-background-size: 120%;
   -moz-background-size: 110%;
@@ -46,26 +46,25 @@ html, body, div, span, h1, p, a, em, img, strong, sub, center, sup, label, artic
 
 .playerShip {
   position: absolute;
-  top: 90%;  /*500px;*/
-  left: 50%;
+  top: 90%;
+  left: 10%;
   width: 150px;
   height: 20px;
   margin: 0;
   background-image: url("../images/shinyMetal.jpg");
   border-style: solid;
-  border-color: white;
-  box-shadow:0 0 20px #fefcc9,
-    0 10px 30px #33ffff,
-    20px 60px 50px #3366ff,
-    -20px 60px 60px #3333ff,
-    0 80px 70px #ff3333;
-
+  border-top-color: white;
+  border-bottom-color: cyan;
+  border-width: 1px;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
 }
 
 .ball {
   background-color: black;
   border-style: solid;
   border-color: white;
+  border-width: 2px;
   position: absolute;
   border-radius: 100%;
 /*  box-shadow:30px 0 30px #feec85,
@@ -83,16 +82,20 @@ html, body, div, span, h1, p, a, em, img, strong, sub, center, sup, label, artic
   position: absolute;
   border-style: solid;
   border-color: gray;
-  box-shadow:10px 0 20px #202020,
-    0 10px 20px #202020;
+  z-index: 5;
+  box-shadow: inset 10px 0 20px #202020,
+    inset 0 10px 20px #202020;
 }
 
 .congratulations {
-  position:absolute;
+  /*position:absolute;*/
   font-size: 75px;
+  z-index: 10;
+  margin: 20px auto;
+  text-align: center;
   color: white;
-  top: 35%;
-  left: 30%;
+  /*top: 35%;
+  left: 30%;*/
   /*text shadow below taken from http://line25.com/articles/using-css-text-shadow-to-create-cool-text-effects*/
   text-shadow: 0 0 20px #fefcc9,
     10px -10px 30px #feec85,
@@ -111,9 +114,7 @@ html, body, div, span, h1, p, a, em, img, strong, sub, center, sup, label, artic
 }
 
 .pauseMessage {
-  position:absolute;
-  top: 45%;
-  left: 30%;
+  margin: 25% auto;
   font-size: 40px;
   text-align: center;
   color: brown;

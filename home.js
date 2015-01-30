@@ -17,8 +17,8 @@ function toggleSound() {
 };
 
 function startGame() {
-  // var gameUrl = "game.html?soundsEnabled="+soundEnabled+"&currentLevel="+level+"&infiniteLives="+infiniteLives;
-  window.location.href = 'game.html';
+   var gameUrl = "game.html?soundsEnabled="+soundEnabled+"&currentLevel="+level+"&infiniteLives="+infiniteLives;
+  window.location.href = gameUrl;
 };
 
 function aboutPage() {
@@ -37,7 +37,6 @@ function sendMessage(message) {
 }
 
 function addGlow(element, time) {
-  console.log("addglow called");
   $(element).addClass('glow');
   setTimeout(function(){
     $(element).removeClass('glow');
@@ -46,7 +45,7 @@ function addGlow(element, time) {
 
 function addGlowClearPWPlayFanare() {
     addGlow('#password', 2000);
-    $('#password').val("");
+    setTimeout(function() {$('#password').val("")}, 2000);
     playFanfare();
 }
 
@@ -78,6 +77,11 @@ function passwordEntered() {
     level = 4;
     addGlowClearPWPlayFanare();
     sendMessage("Starting on Level 4!");
+  }
+  else if(userInput == "LARGEMARGE") {
+    level = 5;
+    addGlowClearPWPlayFanare();
+    sendMessage("Starting on Level 5!");
   }
 }
 
