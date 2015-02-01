@@ -1,5 +1,5 @@
 
-var soundEnabled = true;
+var soundEnabled = true,
     level = 1,
     infiniteLives = false;
 
@@ -14,12 +14,12 @@ function toggleSound() {
     $($soundButton).text("sound: on");
     soundEnabled = true;
   }
-};
+}
 
 function startGame() {
    var gameUrl = "game.html?soundsEnabled="+soundEnabled+"&currentLevel="+level+"&infiniteLives="+infiniteLives;
   window.location.href = gameUrl;
-};
+}
 
 function aboutPage() {
   window.location.href = 'about.html';
@@ -45,7 +45,7 @@ function addGlow(element, time) {
 
 function addGlowClearPWPlayFanare() {
     addGlow('#password', 2000);
-    setTimeout(function() {$('#password').val("")}, 2000);
+    setTimeout(function() {$('#password').val("");}, 2000);
     playFanfare();
 }
 

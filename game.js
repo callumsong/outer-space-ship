@@ -36,7 +36,7 @@ function Ball(x, y, dx, dy) {
   this.dx = dx;       //delta x (change in position)
   this.dy = dy;       //delta y
   this.html = $('<div>').addClass('ball').css({left:this.x, top:this.y, width:BALLSIZE, height:BALLSIZE}).appendTo('body');
-};
+}
 
 Ball.prototype.move = function() {
   this.x += this.dx;
@@ -102,7 +102,7 @@ Ball.prototype.checkBorders = function() {
       $("#arrow")[0].play();
     }
   }
-}
+};
 
 Ball.prototype.checkCollision = function() {
   var ball = this;
@@ -139,7 +139,7 @@ Ball.prototype.checkCollision = function() {
       var ballBorder = {
         x: ball.x + BALLSIZE,
         y: ball.y + BALLSIZE/2
-      }
+      };
       if(pointIsWithinRectangle(ballBorder, objectPosition.left, objectPosition.top, $(this).width(), $(this).height())) {
         ball.dx = -ball.dx;
         ball.x = Math.floor(objectPosition.left - BALLSIZE);
@@ -150,15 +150,15 @@ Ball.prototype.checkCollision = function() {
       var ballBorder = {
         x: ball.x,
         y: ball.y + BALLSIZE/2
-      }
+      };
       if(pointIsWithinRectangle(ballBorder, objectPosition.x, objectPosition.y, $(this).width(), $(this).height())) {
         ball.dx = -ball.dx;
         ball.x = Math.floor(objectPosition.left + $(this).width());
         collisionHappened(this);
       }
     }
-  })
-}
+  });
+};
 
 function ballHitShip() {
   var $ship = $('.playerShip');
@@ -257,7 +257,7 @@ function stringToBool(aString) {
 
 function assignVariablesFromUrl() {
   var urlVariables = window.location.search.substring(1).split('&');
-  if(urlVariables != "") {
+  if(urlVariables !== "") {
     soundsEnabled = stringToBool((urlVariables[0].split('=')[1]));
     currentLevel = Number(urlVariables[1].split('=')[1]);
     infiniteLives = stringToBool(urlVariables[2].split('=')[1]);
@@ -293,7 +293,7 @@ function levelCompleted() {
       $("<h1>Password: "+password+"</h1>").addClass('congratulations').appendTo('body');
     }, 3500);
     setTimeout(function() {
-      $('.ball').remove()
+      $('.ball').remove();
       initializeLevel(currentLevel);
     }, 6000);
   }
@@ -317,7 +317,7 @@ function gameWasBeat() {
         $("<h1>And Avenged your Father!</h1>").addClass('congratulations').appendTo('body');
         setTimeout(function() {
           $('.congratulations').remove();
-          $("<h1>Thanks for playin, bud</h1>").addClass('congratulations').css('margin-top', '20%').appendTo('body')
+          $("<h1>Thanks for playin, bud</h1>").addClass('congratulations').css('margin-top', '20%').appendTo('body');
           setTimeout(function() {
             $("<h1>Here's a password: SPAMHUMBUG</h1><h1>You Earned It!</h1>").addClass('congratulations').appendTo('body');
           }, 2000);
@@ -367,7 +367,7 @@ function levelLayout(level) {
     rows.push(['gold','#0099CC',0 ,'#990033',0 ,'#0099CC','#990033','#0099CC','#0099CC','#990033','#0099CC',0 ,'#990033',0 ,'#0099CC','gold']);
     rows.push(['gold','#33CCCC',0 ,0 ,0 ,'#33CCCC','#33CCCC','#990033','#990033','#33CCCC','#33CCCC',0 ,0 ,0 ,'#33CCCC','gold']);
     rows.push(['gold','#33FFCC','#33FFCC','#33FFCC','#33FFCC','#33FFCC','gold',0 ,0, 'gold','#33FFCC','#33FFCC','#33FFCC','#33FFCC','#33FFCC','gold']);
-    rows.push(['gold','gold','gold','gold','gold','gold','gold',0 ,0 ,'gold','gold','gold','gold','gold','gold','gold',])
+    rows.push(['gold','gold','gold','gold','gold','gold','gold',0 ,0 ,'gold','gold','gold','gold','gold','gold','gold',]);
     return rows;
     break;
   case 4:
@@ -448,7 +448,7 @@ function initializeLevel(level) {
     var blockWidth = Math.floor(windowBorder.right/n-1);
     var blockHeight = Math.floor(windowBorder.bottom*0.04 + 7);
     for (var j=0; j<n; j++) {
-      if (row[j] != 0 && row[j] != 'gold') {
+      if (row[j] !== 0 && row[j] != 'gold') {
         var block = new Block(windowBorder.right*(j/n), windowBorder.bottom * (i*0.05), blockWidth, blockHeight, row[j]);
         blocksOnScreen++;
       }
@@ -529,10 +529,10 @@ $(function() {
   initializePlayerShip();
   $('.playerShip').draggable({axis: "x", containment: 'parent'});
   $(document).keydown(function(event) {
-    keyHeldDown(event)
+    keyHeldDown(event);
   });
   $(document).keyup(function(event) {
-    keyWasPressed(event)
+    keyWasPressed(event);
   });
 });
 
